@@ -1,3 +1,7 @@
+.section__task {
+    list-style: none;
+}
+
 .section__task--done {
     text-decoration: line-through;
 }
