@@ -1,7 +1,26 @@
+.section__tasks { 
+    padding: 0px;
+}
+
+.section {
+    background-color: white;
+    border: solid 1px #e7e7e7;
+    margin-top: 10px;
+}
+
 .section__task {
     list-style: none;
+    padding: 10px;
+    margin: 0px 20px;
+    border-bottom: solid 1px #e7e7e7;
 }
 
 .section__task--done {
     text-decoration: line-through;
+}
+
+.section__head {
+    border-bottom: solid 1px #e7e7e7;
+    margin: 0px 0px 30px;
+    padding: 20px;
 }

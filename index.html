@@ -15,20 +15,24 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/form.css" rel="stylesheet">
     <link href="css/section.css" rel="stylesheet">
-    <title>To do list</title>
+    <title>Lista zadań</title>
 </head>
 
 <body class="body">
+    <header>
+        <h1>Lista zadań</h1>
+    </header>
     <form class="form  js-form">
-        <legend>Lista zadań</legend>
-        <fieldset>
-            <label>
+        <legend class="form__legend">Dodaj nowe zadanie</legend>
+        <fieldset class="form__fieldset">
+            <label class="form__fieldNewTask">
                 <input class="form__newTask js-form__newTask">
                 <button>Dodaj zadanie</button>
             </label>
         </fieldset>
     </form>
     <section class="section">
+        <h2 class="section__head">Lista zadań</h2>
         <ul class="section__tasks js-tasks"></ul>
     </section>
 </body>

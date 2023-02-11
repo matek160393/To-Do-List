@@ -1,0 +1,14 @@
+.form {
+    background-color: #ffffff;
+    padding: 10px;
+    border: solid 1px #e7e7e7;
+}
+
+.form__fieldset {
+    border: none;
+    padding: 0px;
+}
+
+.form__fieldNewTask {
+    padding: 10px;
+}
