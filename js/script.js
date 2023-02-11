@@ -23,12 +23,18 @@
     render();
   };
 
+  const toggleTaskStatus = (taskIndex) => {
+    tasks[taskIndex].done = !tasks[taskIndex].done;
+    render();
+  };
+
   const render = () => {
     let htmlString = "";
 
     for (const task of tasks) {
       htmlString += `
         <li class="section__task ${task.done ? "section__task--done" : ""}">
+          <button class="js-section__buttonStatus">zrobione</button>
           <button class="js-section__buttonRemove">usuń zadanie</button>
           ${task.content}
         </li>
@@ -44,9 +50,17 @@
         removeTask(taskIndex);
       });
     });
-  }
 
- 
+    const toggleStatusButtons = document.querySelectorAll(".js-section__buttonStatus");
+
+    toggleStatusButtons.forEach((toggleStatusButton, taskIndex) => {
+      toggleStatusButton.addEventListener("click", () => {
+        toggleTaskStatus(taskIndex);
+      });
+    });
+  };
+
+
 
 
   const onFormSubmit = (event) => {
