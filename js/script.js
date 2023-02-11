@@ -29,6 +29,7 @@
   };
 
   assignEvents = () => {
+    
     const removeButtons = document.querySelectorAll(".js-section__buttonRemove");
 
     removeButtons.forEach((removeButton, taskIndex) => {
@@ -64,9 +65,6 @@
    assignEvents();
   };
 
-
-
-
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -77,7 +75,6 @@
     }
 
     addNewTask(newTaskContent);
-
   };
 
   const init = () => {
@@ -88,4 +85,4 @@
     formElement.addEventListener("submit", onFormSubmit);
   };
   init();
-}
+};
