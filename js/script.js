@@ -28,21 +28,7 @@
     render();
   };
 
-  const render = () => {
-    let htmlString = "";
-
-    for (const task of tasks) {
-      htmlString += `
-        <li class="section__task ${task.done ? "section__task--done" : ""}">
-          <button class="js-section__buttonStatus">zrobione</button>
-          <button class="js-section__buttonRemove">usuń zadanie</button>
-          ${task.content}
-        </li>
-        `;
-    }
-
-    document.querySelector(".js-tasks").innerHTML = htmlString;
-
+  assignEvents = () => {
     const removeButtons = document.querySelectorAll(".js-section__buttonRemove");
 
     removeButtons.forEach((removeButton, taskIndex) => {
@@ -58,6 +44,24 @@
         toggleTaskStatus(taskIndex);
       });
     });
+  }
+
+  const render = () => {
+    let htmlString = "";
+
+    for (const task of tasks) {
+      htmlString += `
+        <li class="section__task ${task.done ? "section__task--done" : ""}">
+          <button class="js-section__buttonStatus">zrobione</button>
+          <button class="js-section__buttonRemove">usuń zadanie</button>
+          ${task.content}
+        </li>
+        `;
+    }
+
+    document.querySelector(".js-tasks").innerHTML = htmlString;
+
+   assignEvents();
   };
 
 
