@@ -1,6 +1,6 @@
 .form {
     background-color: #ffffff;
-    border: solid 1px #e7e7e7;
+    border: solid 2px #e7e7e7;
 }
 
 .form__fieldset {
@@ -14,10 +14,46 @@
     font-weight: bolder;
     width: 100%;
     padding: 20px;
-    border-bottom: solid 1px #e7e7e7;
+    border-bottom: solid 1.5px #e7e7e7;
     margin: 0px;
 }
 
 .form__newTask {
-    padding: 5px;
+    border: solid 1.5px #e7e7e7;
+    padding: 10px;
+    margin-right: 15px;
+    flex-grow: 1;
+}
+
+@media (max-width: 767px) {
+    .form__newTask {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+
+.form__fieldNewTask {
+    display: flex;
+}
+
+@media (max-width: 767px) {
+    .form__fieldNewTask {
+        flex-direction: column;
+    }
+}
+
+.form__button {
+    border: none;
+    color: #c1ffff;
+    border: solid 1px;
+    background-color: #007482e8;
+    padding: 10px;
+}
+
+.form__button:active {
+    border: solid 1px #000000;
+}
+
+.form__button:hover {
+    cursor: pointer;
 }
