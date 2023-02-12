@@ -29,7 +29,7 @@
   };
 
   assignEvents = () => {
-    
+
     const removeButtons = document.querySelectorAll(".js-section__buttonRemove");
 
     removeButtons.forEach((removeButton, taskIndex) => {
@@ -52,10 +52,10 @@
 
     for (const task of tasks) {
       htmlString += `
-        <li class="section__task ${task.done ? "section__task--done" : ""}">
-          <button class="section__buttonStatus js-section__buttonStatus"></button>
-          <button class="section__buttonRemove js-section__buttonRemove"></button>
-           <p class="section__content">
+        <li class="section__task">
+          <button class="section__buttonStatus js-section__buttonStatus">${task.done ? "&#10004;" : ""}</button>
+          <button class="section__buttonRemove js-section__buttonRemove">️️🗑</button>
+           <p class="section__content ${task.done ? "section__content--done" : ""}">
              ${task.content}
            </p> 
         </li>
@@ -64,19 +64,20 @@
 
     document.querySelector(".js-tasks").innerHTML = htmlString;
 
-   assignEvents();
+    assignEvents();
   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+    const newTaskElement = document.querySelector(".js-form__newTask")
+    const newTaskContent = newTaskElement.value.trim();
 
-    const newTaskContent = document.querySelector(".js-form__newTask").value.trim();
-
-    if (newTaskContent === "") {
-      return;
+    if (newTaskContent !== "") {
+      addNewTask(newTaskContent);
+      newTaskElement.value = "";
     }
 
-    addNewTask(newTaskContent);
+    newTaskElement.focus();
   };
 
   const init = () => {
