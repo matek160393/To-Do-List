@@ -1,14 +1,23 @@
 .form {
     background-color: #ffffff;
-    padding: 10px;
     border: solid 1px #e7e7e7;
 }
 
 .form__fieldset {
     border: none;
-    padding: 0px;
+    padding: 20px;
 }
 
-.form__fieldNewTask {
-    padding: 10px;
+
+.form__legend {
+    font-size: 18px;
+    font-weight: bolder;
+    width: 100%;
+    padding: 20px;
+    border-bottom: solid 1px #e7e7e7;
+    margin: 0px;
+}
+
+.form__newTask {
+    padding: 5px;
 }
