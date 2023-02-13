@@ -42,14 +42,6 @@
     border: none;
 }
 
-.section__buttonStatus:active {
-    border: solid 1px #000000;
-}
-
-.section__buttonStatus:hover {
-    cursor: pointer;
-}
-
 .section__buttonRemove {
     text-decoration: none;
     margin-right: 10px;
@@ -61,11 +53,11 @@
     border: none;
 }
 
-.section__buttonRemove:active {
+.section__button:active {
     border: solid 1px #000000;
 }
 
-.section__buttonRemove:hover {
+.section__button:hover {
     cursor: pointer;
 }
 

@@ -42,15 +42,16 @@
     let htmlString = "";
 
     for (const task of tasks) {
-      htmlString += `
+      htmlString +=
+       `
         <li class="section__task">
-          <button class="section__buttonStatus js-section__buttonStatus">${task.done ? "&#10004;" : ""}</button>
-          <button class="section__buttonRemove js-section__buttonRemove">️️🗑</button>
-           <p class="section__content ${task.done ? "section__content--done" : ""}">
-             ${task.content}
-           </p> 
+          <button class="section__buttonStatus section__button js-section__buttonStatus">${task.done ? "&#10004;" : ""}</button>
+          <button class="section__buttonRemove section__button js-section__buttonRemove">️️🗑</button>
+          <p class="section__content ${task.done ? "section__content--done" : ""}">
+            ${task.content}
+          </p> 
         </li>
-        `;
+       `;
     }
 
     document.querySelector(".js-tasks").innerHTML = htmlString;
@@ -60,7 +61,7 @@
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const newTaskElement = document.querySelector(".js-form__newTask")
+    const newTaskElement = document.querySelector(".js-form__newTask");
     const newTaskContent = newTaskElement.value.trim();
 
     if (newTaskContent !== "") {

@@ -8,7 +8,6 @@
     padding: 20px;
 }
 
-
 .form__legend {
     font-size: 18px;
     font-weight: bolder;
@@ -25,18 +24,16 @@
     flex-grow: 1;
 }
 
-@media (max-width: 767px) {
-    .form__newTask {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
-
 .form__fieldNewTask {
     display: flex;
 }
 
 @media (max-width: 767px) {
+    .form__newTask {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
     .form__fieldNewTask {
         flex-direction: column;
     }
