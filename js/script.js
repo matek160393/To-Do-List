@@ -2,7 +2,6 @@
   const tasks = [];
 
   const addNewTask = (newTaskContent) => {
-
     tasks.push({
       content: newTaskContent,
     });
@@ -21,7 +20,7 @@
 
   assignEvents = () => {
 
-    const removeButtons = document.querySelectorAll(".js-section__buttonRemove");
+    const removeButtons = document.querySelectorAll(".js-tasksList__buttonRemove");
 
     removeButtons.forEach((removeButton, taskIndex) => {
       removeButton.addEventListener("click", () => {
@@ -29,7 +28,7 @@
       });
     });
 
-    const toggleStatusButtons = document.querySelectorAll(".js-section__buttonStatus");
+    const toggleStatusButtons = document.querySelectorAll(".js-tasksList__buttonStatus");
 
     toggleStatusButtons.forEach((toggleStatusButton, taskIndex) => {
       toggleStatusButton.addEventListener("click", () => {
@@ -44,17 +43,17 @@
     for (const task of tasks) {
       htmlString +=
        `
-        <li class="section__task">
-          <button class="section__buttonStatus section__button js-section__buttonStatus">${task.done ? "&#10004;" : ""}</button>
-          <button class="section__buttonRemove section__button js-section__buttonRemove">️️🗑</button>
-          <p class="section__content ${task.done ? "section__content--done" : ""}">
+        <li class="tasksList__task">
+          <button class="tasksList__buttonStatus tasksList__button js-tasksList__buttonStatus">${task.done ? "&#10004;" : ""}</button>
+          <p class="tasksList__taskContent ${task.done ? "tasksList__taskContent--done" : ""}">
             ${task.content}
           </p> 
+          <button class="tasksList__buttonRemove tasksList__button js-tasksList__buttonRemove">️️🗑</button>
         </li>
        `;
     }
 
-    document.querySelector(".js-tasks").innerHTML = htmlString;
+    document.querySelector(".js-tasksList").innerHTML = htmlString;
 
     assignEvents();
   };

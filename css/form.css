@@ -1,57 +1,61 @@
 .form {
     background-color: #ffffff;
     border: solid 2px #e7e7e7;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.form__fieldset {
-    border: none;
-    padding: 0px;
-}
-
-.form__legend {
-    font-size: 18px;
-    font-weight: bolder;
-    width: 100%;
+.form__head {
+    margin-top: 0px;
     padding: 20px;
+    display: flex;
+    flex-basis: 800px;
     border-bottom: solid 1.5px #e7e7e7;
-    margin: 0px;
 }
 
 .form__newTask {
     border: solid 1.5px #e7e7e7;
     padding: 10px;
-    margin-right: 15px;
+    margin: 0px 15px 20px 20px;
     flex-grow: 1;
-}
-
-.form__fieldNewTask {
-    display: flex;
-    padding: 20px;
-}
-
-@media (max-width: 767px) {
-    .form__newTask {
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .form__fieldNewTask {
-        flex-direction: column;
-    }
 }
 
 .form__button {
     border: none;
-    color: #c1ffff;
-    border: solid 1px;
+    color: #ffffff;
     background-color: #007482e8;
     padding: 10px;
+    margin: 0px 20px 20px 0px;
 }
 
 .form__button:active {
-    border: solid 1px #000000;
+    outline: solid 1px #000000;
 }
 
 .form__button:hover {
     cursor: pointer;
 }
+
+@media (max-width: 767px) {
+    .form__head {
+        flex-basis: auto;
+    }
+
+    .form__newTask {
+        margin: 0px 20px;
+        padding: 10px; 
+    }
+
+    .form__button {
+        border: none;
+        color: #ffffff;
+        background-color: #007482e8;
+        padding: 10px;
+        margin: 20px;
+    }
+
+    .form {
+        flex-direction: column;
+    }
+}
+

@@ -1,0 +1,53 @@
+.tasksList {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.tasksList__task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0px 20px;
+    border-bottom: solid 2px #e7e7e7;
+}
+
+.tasksList__taskContent--done {
+    text-decoration: line-through;
+}
+
+.tasksList__buttonStatus {
+    color: #ffffff;
+    margin-left: 10px;
+    font-size: 15px;
+    height: 30px;
+    flex-basis: 30px;
+    flex-shrink: 0;
+    text-decoration: none;
+    background-color: #1b7a20;
+    border: none;
+}
+
+.tasksList__buttonRemove {
+    text-decoration: none;
+    margin-right: 10px;
+    height: 30px;
+    flex-basis: 30px;
+    flex-shrink: 0;
+    background-color: #eb283a;
+    border: none;
+}
+
+.tasksList__button:active {
+    outline: solid 1px #000000;
+}
+
+.tasksList__button:hover {
+    cursor: pointer;
+}
+
+.tasksList__taskContent {
+    padding: 0px 20px;
+    flex-grow: 1;
+}
