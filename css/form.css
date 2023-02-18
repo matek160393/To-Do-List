@@ -1,31 +1,27 @@
-.form {
-    background-color: #ffffff;
-    border: solid 2px #e7e7e7;
-    display: flex;
-    flex-wrap: wrap;
+.form__head {
+    grid-column-start: span 2;
+    padding: 20px;
+    margin: 0px;
+    border-bottom: solid 1.5px #e7e7e7;
 }
 
-.form__head {
-    margin-top: 0px;
-    padding: 20px;
-    display: flex;
-    flex-basis: 800px;
-    border-bottom: solid 1.5px #e7e7e7;
+.form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+    background-color: #ffffff;
 }
 
 .form__newTask {
     border: solid 1.5px #e7e7e7;
     padding: 10px;
-    margin: 0px 15px 20px 20px;
-    flex-grow: 1;
 }
 
 .form__button {
     border: none;
+    padding: 10px;
     color: #ffffff;
     background-color: #007482e8;
-    padding: 10px;
-    margin: 0px 20px 20px 0px;
 }
 
 .form__button:active {
@@ -37,25 +33,7 @@
 }
 
 @media (max-width: 767px) {
-    .form__head {
-        flex-basis: auto;
-    }
-
-    .form__newTask {
-        margin: 0px 20px;
-        padding: 10px; 
-    }
-
-    .form__button {
-        border: none;
-        color: #ffffff;
-        background-color: #007482e8;
-        padding: 10px;
-        margin: 20px;
-    }
-
     .form {
-        flex-direction: column;
+        grid-template-columns: auto;
     }
 }
-

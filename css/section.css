@@ -1,12 +1,17 @@
 .section {
+    display: grid;
     background-color: white;
+    margin-top: 5px;
     border: solid 2px #e7e7e7;
-    margin-top: 7px;
 }
 
 .section__head {
     border-bottom: solid 1.5px #e7e7e7;
     font-size: 20px;
-    margin: 0px 0px 30px;
+    margin: 0px;
+    padding: 20px;
+}
+
+.section__content {
     padding: 20px;
 }
