@@ -1,20 +1,33 @@
 {
-  const tasks = [];
+  let tasks = [];
 
   const addNewTask = (newTaskContent) => {
-    tasks.push({
-      content: newTaskContent,
-    });
+    tasks = [
+      ...tasks,
+      { content: newTaskContent },
+    ];
     render();
   };
 
   const removeTask = (taskIndex) => {
-    tasks.splice(taskIndex, 1);
+
+    tasks = [
+      ...tasks.slice(0, taskIndex),
+      ...tasks.slice(taskIndex + 1),
+    ];
+
     render();
   };
 
   const toggleTaskStatus = (taskIndex) => {
-    tasks[taskIndex].done = !tasks[taskIndex].done;
+    tasks = [
+      ...tasks.slice(0, taskIndex),
+      {
+        ...tasks[taskIndex],
+        done: !tasks[taskIndex].done,
+      },
+      ...tasks.slice(taskIndex + 1),
+    ];
     render();
   };
 
@@ -42,7 +55,7 @@
 
     for (const task of tasks) {
       htmlString +=
-       `
+        `
         <li class="tasksList__task">
           <button class="tasksList__buttonStatus tasksList__button js-tasksList__buttonStatus">${task.done ? "&#10004;" : ""}</button>
           <p class="tasksList__taskContent ${task.done ? "tasksList__taskContent--done" : ""}">
