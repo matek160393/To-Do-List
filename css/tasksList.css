@@ -51,3 +51,7 @@
     padding: 0px 20px;
     flex-grow: 1;
 }
+
+.taskList__taskDone--hiden {
+    display: none;
+}
