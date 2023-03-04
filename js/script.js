@@ -91,8 +91,8 @@
     if (tasks.length > 0) {
       htmlButton +=
       `
-      <button class="buttonHideTasks">${hideTasksDone ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
-      <button class="buttonAllDone" ${tasks.every(({done}) => done) ? "disabled" : ""}>ukończ wszystkie</button>
+      <button class="section__button js-section__buttonHideTasks">${hideTasksDone ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
+      <button class="section__button js-section__buttonAllDone" ${tasks.every(({done}) => done) ? "disabled" : ""}>ukończ wszystkie</button>
       `
     }
     document.querySelector(".section__buttons").innerHTML = htmlButton;
@@ -100,12 +100,12 @@
   };
 
   const bindButtonsEvents = () => {
-    const buttonAllDoneElement = document.querySelector(".buttonAllDone");
+    const buttonAllDoneElement = document.querySelector(".js-section__buttonAllDone");
     if (buttonAllDoneElement) {
       buttonAllDoneElement.addEventListener("click", (allTasksDone) )
     };
     
-    const buttonHideDoneTasks = document.querySelector(".buttonHideTasks");
+    const buttonHideDoneTasks = document.querySelector(".js-section__buttonHideTasks");
     if (buttonHideDoneTasks) {
       buttonHideDoneTasks.addEventListener("click", (hideAllDoneTasks))
     };
