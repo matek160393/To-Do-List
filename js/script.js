@@ -11,12 +11,10 @@
   };
 
   const removeTask = (taskIndex) => {
-
     tasks = [
       ...tasks.slice(0, taskIndex),
       ...tasks.slice(taskIndex + 1),
     ];
-
     render();
   };
 
@@ -36,17 +34,16 @@
     tasks = tasks.map((task) => ({
       ...task,
       done: true
-    }))
-   
+    }));
     render();
   };
 
   hideAllDoneTasks = () => {
     if(tasks.find(({done}) => done )){
       hideTasksDone = !hideTasksDone;
-    }
+    };
     render();
-  }
+  };
 
   assignEvents = () => {
 
@@ -65,7 +62,7 @@
         toggleTaskStatus(taskIndex);
       });
     });
-  }
+  };
   const renderTasks = () => {
     let htmlString = "";
 
@@ -73,17 +70,21 @@
       htmlString +=
         `
       <li class="tasksList__task ${task.done && hideTasksDone ? "taskList__taskDone--hiden" : ""}">
-        <button class="tasksList__buttonStatus tasksList__button js-tasksList__buttonStatus">${task.done ? "&#10004;" : ""}</button>
+        <button class="tasksList__buttonStatus tasksList__button js-tasksList__buttonStatus">
+          ${task.done ? "&#10004;" : ""}
+        </button>
         <p class="tasksList__taskContent ${task.done ? "tasksList__taskContent--done" : ""}">
           ${task.content}
         </p> 
-        <button class="tasksList__buttonRemove tasksList__button js-tasksList__buttonRemove">️️🗑</button>
+        <button class="tasksList__buttonRemove tasksList__button js-tasksList__buttonRemove">️️
+         🗑
+        </button>
       </li>
      `;
-    }
+    };
 
     document.querySelector(".js-tasksList").innerHTML = htmlString;
-  }
+  };
 
   const renderButtons = () => {
     let htmlButton = "";
@@ -91,23 +92,29 @@
     if (tasks.length > 0) {
       htmlButton +=
       `
-      <button class="section__button js-section__buttonHideTasks">${hideTasksDone ? "Pokaż ukończone" : "Ukryj ukończone"}</button>
-      <button class="section__button js-section__buttonAllDone" ${tasks.every(({done}) => done) ? "disabled" : ""}>ukończ wszystkie</button>
-      `
-    }
-    document.querySelector(".section__buttons").innerHTML = htmlButton;
+      <button class="section__button js-section__buttonHideTasks" 
+         ${tasks.some(({done}) => done) ? "" : "disabled"}>
+         ${hideTasksDone ? "Pokaż ukończone" : "Ukryj ukończone"}
+      </button>
+      <button class="section__button js-section__buttonAllDone" 
+         ${tasks.every(({done}) => done) ? "disabled" : ""}>
+         ukończ wszystkie
+      </button>
+      `;
+    };
 
+    document.querySelector(".js-section__buttons").innerHTML = htmlButton;
   };
 
   const bindButtonsEvents = () => {
     const buttonAllDoneElement = document.querySelector(".js-section__buttonAllDone");
     if (buttonAllDoneElement) {
-      buttonAllDoneElement.addEventListener("click", (allTasksDone) )
+      buttonAllDoneElement.addEventListener("click", (allTasksDone));
     };
     
     const buttonHideDoneTasks = document.querySelector(".js-section__buttonHideTasks");
     if (buttonHideDoneTasks) {
-      buttonHideDoneTasks.addEventListener("click", (hideAllDoneTasks))
+      buttonHideDoneTasks.addEventListener("click", (hideAllDoneTasks));
     };
   };
 
@@ -126,7 +133,7 @@
     if (newTaskContent !== "") {
       addNewTask(newTaskContent);
       newTaskElement.value = "";
-    }
+    };
 
     newTaskElement.focus();
   };
@@ -135,7 +142,6 @@
     render();
 
     const formElement = document.querySelector(".js-form");
-
     formElement.addEventListener("submit", onFormSubmit);
   };
   init();
