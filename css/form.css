@@ -9,7 +9,7 @@
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 20px;
-    background-color: #ffffff;
+    background-color: none;
 }
 
 @media (max-width: 767px) {
