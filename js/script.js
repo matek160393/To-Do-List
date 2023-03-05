@@ -128,7 +128,7 @@
   const onFormSubmit = (event) => {
     event.preventDefault();
     const newTaskElement = document.querySelector(".js-form__newTask");
-    const newTaskContent = newTaskElement.value.trim();
+    const newTaskContent = newTaskElement.value.trim().charAt(0).toUpperCase() + newTaskElement.value.trim().slice(1);
 
     if (newTaskContent !== "") {
       addNewTask(newTaskContent);
