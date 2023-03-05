@@ -98,7 +98,7 @@
       </button>
       <button class="section__button js-section__buttonAllDone" 
          ${tasks.every(({done}) => done) ? "disabled" : ""}>
-         ukończ wszystkie
+         Ukończ wszystkie
       </button>
       `;
     };
