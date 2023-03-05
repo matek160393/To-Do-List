@@ -1,7 +1,7 @@
 .form__head {
     grid-column-start: span 2;
     padding: 20px;
-    margin: 0px;
+    margin: 0;
     border-bottom: solid 1.5px #e7e7e7;
 }
 
@@ -28,6 +28,7 @@
     padding: 10px;
     color: #ffffff;
     background-color: hsla(186, 100%, 25%, 0.91);
+    transition: 0.5s;
 }
 
 .form__button:active {
@@ -37,6 +38,5 @@
 .form__button:hover {
     cursor: pointer;
     background-color: hsla(186, 100%, 25%, 0.797);
-    transition: 0.5s;
     transform: scaleY(1.05) scaleX(1.1);
 }

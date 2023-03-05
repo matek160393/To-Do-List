@@ -1,7 +1,7 @@
 .tasksList {
     display: flex;
     flex-direction: column;
-    padding: 0px;
+    padding: 0;
 }
 
 .tasksList__task {
@@ -26,12 +26,12 @@
     flex-shrink: 0;
     background-color: #1b791f;
     border: none;
+    transition: 1s;
 }
 
 .tasksList__buttonStatus:hover {
     cursor: pointer;
     background-color: #1f8e25;
-    transition: 1s;
 }
 
 .tasksList__buttonRemove {
@@ -41,13 +41,12 @@
     flex-shrink: 0;
     background-color: #eb283c;
     border: none;
+    transition: 1s;
 }
 
 .tasksList__buttonRemove:hover {
-
     cursor: pointer;
     background-color: #ed4051;
-    transition: 1s;
 }
 
 .tasksList__button:active {

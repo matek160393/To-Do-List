@@ -49,6 +49,7 @@
     border: none;
     background-color: #ffffff;
     color: hsl(180, 100%, 29%);
+    transition: 1s;
 }
 
 .section__button:disabled {
@@ -58,5 +59,4 @@
 
 .section__button:hover {
     color: hsla(180, 99%, 34%, 0.757);
-    transition: 1s;
 }
