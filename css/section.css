@@ -48,5 +48,15 @@
     cursor: pointer;
     border: none;
     background-color: #ffffff;
-    color: #008080;
+    color: hsl(180, 100%, 29%);
+}
+
+.section__button:disabled {
+    cursor: default;
+    color: #808080 !important;
+}
+
+.section__button:hover {
+    color: hsla(180, 99%, 34%, 0.757);
+    transition: 1s;
 }

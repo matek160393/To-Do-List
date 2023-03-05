@@ -12,6 +12,12 @@
     background-color: #ffffff;
 }
 
+@media (max-width: 767px) {
+    .form {
+        grid-template-columns: auto;
+    }
+}
+
 .form__newTask {
     border: solid 1.5px #e7e7e7;
     padding: 10px;
@@ -21,7 +27,7 @@
     border: none;
     padding: 10px;
     color: #ffffff;
-    background-color: #007482e8;
+    background-color: hsla(186, 100%, 25%, 0.91);
 }
 
 .form__button:active {
@@ -30,10 +36,7 @@
 
 .form__button:hover {
     cursor: pointer;
-}
-
-@media (max-width: 767px) {
-    .form {
-        grid-template-columns: auto;
-    }
+    background-color: hsla(186, 100%, 25%, 0.797);
+    transition: 0.5s;
+    transform: scaleY(1.05) scaleX(1.1);
 }

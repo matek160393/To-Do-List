@@ -24,27 +24,34 @@
     height: 30px;
     flex-basis: 30px;
     flex-shrink: 0;
-    text-decoration: none;
-    background-color: #1b7a20;
+    background-color: #1b791f;
     border: none;
 }
 
+.tasksList__buttonStatus:hover {
+    cursor: pointer;
+    background-color: #1f8e25;
+    transition: 1s;
+}
+
 .tasksList__buttonRemove {
-    text-decoration: none;
     margin-right: 10px;
     height: 30px;
     flex-basis: 30px;
     flex-shrink: 0;
-    background-color: #eb283a;
+    background-color: #eb283c;
     border: none;
 }
 
-.tasksList__button:active {
-    outline: solid 1px #000000;
+.tasksList__buttonRemove:hover {
+
+    cursor: pointer;
+    background-color: #ed4051;
+    transition: 1s;
 }
 
-.tasksList__button:hover {
-    cursor: pointer;
+.tasksList__button:active {
+    outline: solid 1px hsla(0, 0%, 0%, 0.3);
 }
 
 .tasksList__taskContent {
